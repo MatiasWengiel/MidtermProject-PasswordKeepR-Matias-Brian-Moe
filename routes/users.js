@@ -26,8 +26,8 @@ module.exports = (db) => {
   });
 
   router.get('/:id', (req, res) => {
-    const userID = req.session.userId;
-    res.send(`<h1>You are logged in as user ${userID}<h1>`);
+    const userID = req.params.id;
+    res.send(`<h1>This route allows you to see the info of user ${userID}<h1>`);
   });
 
   router.post('/:id', (req, res) => {
