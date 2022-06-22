@@ -8,6 +8,8 @@
 * A users - POST /users <!-- Create new user -->
 * D users - POST /users/:id/delete <!-- Delete existing user -->
 
+* Login - POST /users/login
+
 ## Passwords
 * B passwords - GET /passwords <!-- See all the PWs associated with the user's org -->
 * R passwords - GET /passwords/:id <!-- See detail for a single PW -->
