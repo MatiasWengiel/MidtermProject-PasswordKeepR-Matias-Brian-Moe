@@ -1,0 +1,70 @@
+.nav {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #0e353d;
+  background-color: #d9e6e9;
+
+  #logo {
+    display: flex;
+    justify-content: center;
+    span {
+      color: rgb(172, 11, 11);
+    }
+
+  }
+  .category {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    h3 {
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+  .nav-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+
+}
+
+* {box-sizing: border-box}
+
+/* Style the tab */
+.tab {
+  float: left;
+  width: 100%;
+  background-color: transparent;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 11px 8px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(107, 107, 107);
+}
+
+
