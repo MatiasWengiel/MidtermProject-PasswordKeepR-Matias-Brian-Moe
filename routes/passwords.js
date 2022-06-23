@@ -24,6 +24,7 @@ module.exports = (db) => {
 
 
   });
+
   router.get('/search/categories', (req, res) => {
     const orgId = req.session.orgId;
     db.query(`
@@ -32,6 +33,30 @@ module.exports = (db) => {
     JOIN categories ON passwords.category_id = categories.id
     WHERE passwords.organization_id = ${orgId} AND categories.id = 3;
     `) // Still need to change categories.id to fetch the id from the user selection
+    .then(data => {
+      const passwords = data.rows;
+      res.json({ passwords });
+    })
+    .catch (err => {
+      res
+        .status(500)
+        .json({error: err.message });
+    });
+  })
+
+  router.get('/search/:query', (req, res) => {
+    const orgId = req.session.orgId;
+    const query = req.params.query;
+    console.log('The query was ', query)
+    db.query(`
+    SELECT website_nickname, login_email, login_password FROM passwords
+    JOIN organizations ON passwords.organization_id = organizations.id
+    JOIN categories ON passwords.category_id = categories.id
+    WHERE passwords.website_nickname LIKE '%${query}%' OR
+          passwords.website_url LIKE '%${query}%' OR
+          categories.category LIKE '%${query}%' AND
+          passwords.organization_id = ${orgId};;
+    `)
     .then(data => {
       const passwords = data.rows;
       res.json({ passwords });
