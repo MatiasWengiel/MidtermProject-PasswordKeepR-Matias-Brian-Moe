@@ -12,6 +12,8 @@
 
 ## Passwords
 * B passwords - GET /passwords <!-- See all the PWs associated with the user's org -->
+  * B passwords categories - GET /passwords/search/categories
+  * B passwords searchbar - GET /passwords/search/:query
 * R passwords - GET /passwords/:id <!-- See detail for a single PW -->
 * E passwords - POST /passwords/:id <!-- Edit a stored password and/or change its category-->
 * A passwords - POST /passwords <!-- Create new password-->
