@@ -25,6 +25,12 @@ module.exports = (db) => {
 
   });
 
+  router.get('/login', (req, res) => { //Would normally be a POST route, using GET since we are not implementing login for our DEMO. Placeholders below
+    req.session.userId = '1';
+    req.session.orgId = '1'
+    res.redirect('/users/1');
+  });
+
   router.get('/:id', (req, res) => {
     const userID = req.params.id;
     res.send(`<h1>This route allows you to see the info of user ${userID}<h1>`);
@@ -41,10 +47,7 @@ module.exports = (db) => {
   router.post('/:id/delete', (req, res) => {
     res.send('You successfully posted to /users/:id/delete');
   })
-  router.get('/login', (req, res) => { //Would normally be a POST route, using GET since we are not implementing login for our DEMO. Placeholders below
-    req.session.userId = '1';
-    res.redirect('/users/1');
-  });
+
 
   return router;
 };

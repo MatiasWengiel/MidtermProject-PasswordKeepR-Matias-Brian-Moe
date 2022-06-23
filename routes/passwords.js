@@ -4,20 +4,69 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const userId = req.session.userId;
-    res.send(`<h1>This is the /passwords page, where you will be able to see all the passwords linked to your organization </h1><h2>The logged in user is ${userId}<h2>`);
-    // db.query(`SELECT * FROM users;`)
-    //   .then(data => {
-    //     const users = data.rows;
-    //     res.json({ users });
-    //   })
-    //   .catch(err => {
-    //     res
-    //       .status(500)
-    //       .json({ error: err.message });
-    //   });
+    const orgId = req.session.orgId;
+    console.log('org ID is ', orgId)
+    db.query(`
+    SELECT website_nickname, login_email, login_password FROM passwords
+    JOIN organizations ON passwords.organization_id = organizations.id
+    WHERE passwords.organization_id = ${orgId};
+    `)
+      .then(data => {
+        const passwords = data.rows;
+
+        res.json({ passwords }); //We can change this to render the page showing the PWs
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
 
 
   });
+
+  router.get('/search/categories', (req, res) => {
+    const orgId = req.session.orgId;
+    db.query(`
+    SELECT website_nickname, login_email, login_password FROM passwords
+    JOIN organizations ON passwords.organization_id = organizations.id
+    JOIN categories ON passwords.category_id = categories.id
+    WHERE passwords.organization_id = ${orgId} AND categories.id = 3;
+    `) // Still need to change categories.id to fetch the id from the user selection
+    .then(data => {
+      const passwords = data.rows;
+      res.json({ passwords });
+    })
+    .catch (err => {
+      res
+        .status(500)
+        .json({error: err.message });
+    });
+  })
+
+  router.get('/search/:query', (req, res) => {
+    const orgId = req.session.orgId;
+    const query = req.params.query;
+    console.log('The query was ', query)
+    db.query(`
+    SELECT website_nickname, login_email, login_password FROM passwords
+    JOIN organizations ON passwords.organization_id = organizations.id
+    JOIN categories ON passwords.category_id = categories.id
+    WHERE passwords.website_nickname LIKE '%${query}%' OR
+          passwords.website_url LIKE '%${query}%' OR
+          categories.category LIKE '%${query}%' AND
+          passwords.organization_id = ${orgId};;
+    `)
+    .then(data => {
+      const passwords = data.rows;
+      res.json({ passwords });
+    })
+    .catch (err => {
+      res
+        .status(500)
+        .json({error: err.message });
+    });
+  })
 
   router.get('/:id', (req, res) => {
 
