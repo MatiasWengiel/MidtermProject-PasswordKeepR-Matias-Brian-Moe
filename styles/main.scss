@@ -34,8 +34,46 @@
   flex-direction: column;
 }
 
+// Add new password button
 
-// Copy text css
+.button {
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: #5784f5;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  .button-text, .button-icon {
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 100%;
+  }
+
+  .button-icon {
+    font-size: 1.5em;
+    background: rgba(0,0,0,0.08);
+  }
+
+}
+
+.button:hover {
+  background: #3a68db
+}
+
+.button:active {
+  background: #5c81dc
+}
+
+
+// Username and Password text fields
 
 .text-container {
   position: inherit;
