@@ -34,7 +34,7 @@ body {
   font-size: 2rem;
   font-weight: 600;
   color: #fff;
-  padding: 1.6rem 3.2rem;
+  padding: 1rem 2rem;
   display: inline-block;
   border-radius: 12px;
   text-decoration: none;
@@ -84,6 +84,44 @@ body {
 
 .logo {
   height: 2.2rem;
+}
+
+/*********************************/
+/* Navigation */
+/*********************************/
+
+.main-nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+}
+
+.link.signup:link,
+.link.signup:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.link.signup:hover,
+.link.signup:active {
+  background-color: #cf711f;
 }
 
 /*********************************/
