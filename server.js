@@ -60,7 +60,7 @@ app.use('/passwords', passwordRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("passwords_page");
 });
 
 app.listen(PORT, () => {

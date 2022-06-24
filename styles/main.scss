@@ -1,17 +1,151 @@
-body {
+.password-container {
+  height: 100%;
+  width: 50%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
 
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgba(163, 208, 219, 1) 0%,
-    rgba(163, 176, 219, 1) 20%,
-    rgba(163, 173, 219, 1) 34%,
-    rgba(163, 219, 208, 1) 59%,
-    rgba(163, 208, 219, 1) 74%,
-    rgba(163, 208, 219, 1) 100%
-  );
+  .password-content {
+    width: 100%;
+    margin: 10px;
+    padding: 5px;
+    border: solid 2px gray;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  img {
+    width: 70px;
+  }
 }
+
+.display-password {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-details {
+  display: flex;
+  flex-direction: column;
+}
+
+// Add new password button
+
+.button {
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: #5784f5;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  .button-text, .button-icon {
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 100%;
+  }
+
+  .button-icon {
+    font-size: 1.5em;
+    background: rgba(0,0,0,0.08);
+  }
+
+}
+
+.button:hover {
+  background: #3a68db
+}
+
+.button:active {
+  background: #5c81dc
+}
+
+
+// Username and Password text fields
+
+.text-container {
+  position: inherit;
+
+}
+
+.label {
+  padding: 10px;
+  font-size: 18px;
+  color: #111;
+  margin-top: 20px
+}
+
+.copy-text {
+  position: relative;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy-text input.text {
+  padding: 10px;
+  font-size: 18px;
+  color: #555;
+  border: none;
+  outline: none;
+}
+
+.copy-text button {
+  padding: 10px;
+  background: #5784f5;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.copy-text button:active {
+  background: #809ce2 ;
+}
+
+.copy-text button:before {
+  content: "Copied";
+  position: absolute;
+  top: -50px;
+  right: 0px;
+  background: #5c81dc;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  display: none;
+}
+
+.copy-text button:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  background: #5c81dc;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.copy-text.active button:before,
+.copy-text.active button:after {
+  display:block;
+}
+

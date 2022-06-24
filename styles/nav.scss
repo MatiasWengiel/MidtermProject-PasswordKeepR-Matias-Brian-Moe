@@ -1,0 +1,120 @@
+.nav {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #0e353d;
+  background-color: #d9e6e9;
+
+  #logo {
+    display: flex;
+    justify-content: center;
+    span {
+      color: rgb(172, 11, 11);
+    }
+  }
+
+  .search-box {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    display: inline-flex;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+    .search-btn {
+      color: #e84118;
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #2f3640;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+      text-decoration: none;
+    }
+
+    .search-text {
+      border: none;
+      background: none;
+      outline: none;
+      float: left;
+      padding: 0;
+      color: white;
+      font-size: 16px;
+      transition: 0.4s;
+      line-height: 40px;
+      width: 0px;
+    }
+  }
+
+  .search-box:hover > .search-text {
+    width: 120px;
+    padding: 0 6px;
+    top: 50px;
+  }
+
+  .search-box:hover > .search-btn{
+    background: white;
+    }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    h3 {
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+  .nav-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+
+}
+
+* {box-sizing: border-box}
+
+/* Style the tab */
+.tab {
+  float: left;
+  width: 100%;
+  background-color: transparent;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 11px 8px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(107, 107, 107);
+}
+
+
