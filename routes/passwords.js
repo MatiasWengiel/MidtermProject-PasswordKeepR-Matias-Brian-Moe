@@ -1,16 +1,18 @@
 const express = require('express');
 const router  = express.Router();
 
+const {
+  getAllOrganizationalPasswords,
+  getAllOrganizationalPasswordsWithinCategory,
+  getAllOrganizationalPasswordsFromSearch
+} = require('../db/query_functions')
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const userId = req.session.userId;
     const orgId = req.session.orgId;
     console.log('org ID is ', orgId)
-    db.query(`
-    SELECT website_nickname, login_email, login_password FROM passwords
-    JOIN organizations ON passwords.organization_id = organizations.id
-    WHERE passwords.organization_id = ${orgId};
-    `)
+    db.query(getAllOrganizationalPasswords(orgId))
       .then(data => {
         const passwords = data.rows;
 
@@ -27,12 +29,7 @@ module.exports = (db) => {
 
   router.get('/search/categories', (req, res) => {
     const orgId = req.session.orgId;
-    db.query(`
-    SELECT website_nickname, login_email, login_password FROM passwords
-    JOIN organizations ON passwords.organization_id = organizations.id
-    JOIN categories ON passwords.category_id = categories.id
-    WHERE passwords.organization_id = ${orgId} AND categories.id = 3;
-    `) // Still need to change categories.id to fetch the id from the user selection
+    db.query(getAllOrganizationalPasswordsWithinCategory(orgId, 3))
     .then(data => {
       const passwords = data.rows;
       res.json({ passwords });
@@ -48,15 +45,7 @@ module.exports = (db) => {
     const orgId = req.session.orgId;
     const query = req.params.query;
     console.log('The query was ', query)
-    db.query(`
-    SELECT website_nickname, login_email, login_password FROM passwords
-    JOIN organizations ON passwords.organization_id = organizations.id
-    JOIN categories ON passwords.category_id = categories.id
-    WHERE passwords.website_nickname LIKE '%${query}%' OR
-          passwords.website_url LIKE '%${query}%' OR
-          categories.category LIKE '%${query}%' AND
-          passwords.organization_id = ${orgId};;
-    `)
+    db.query(getAllOrganizationalPasswordsFromSearch(orgId, query))
     .then(data => {
       const passwords = data.rows;
       res.json({ passwords });

@@ -2,7 +2,7 @@
 # Browse - Read - Edit - Add - Delete
 
 ## Users/Login
-* B users - GET /users <!-- Seeing the users linked to an org. -->
+* B users - GET /users <!-- Seeing the users linked to an org. Stretch? -->
 * R users - GET /users/:id <!-- Seeing user info (email, org) -->
 * E users - POST /users/:id <!-- Edit a user's email? May be better for a stretch -->
 * A users - POST /users <!-- Create new user -->
