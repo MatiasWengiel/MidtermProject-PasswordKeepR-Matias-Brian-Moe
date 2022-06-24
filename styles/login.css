@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  background: #4dabf7;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.25fr 2fr 0.5fr;
+}
+
+.login-container {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  justify-self: center;
+}
+
+.login-form {
+  background: #e7f5ff;
+  width: 40rem;
+  text-align: center;
+  height: 30rem;
+}
+
+.heading {
+  padding-top: 2.5rem;
+}
+
+.username {
+  display: block;
+  text-align: center;
+  border: 2px solid #4dabf7;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  width: 15rem;
+  background: none;
+  margin: 20px auto;
+  transition: 0.25s;
+}
+
+.password {
+  display: block;
+  text-align: center;
+  border: 2px solid #4dabf7;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  width: 15rem;
+  background: none;
+  margin: 20px auto;
+  transition: 0.25s;
+}
+
+.submit {
+  border: 2px solid #4dabf7;
+  background: #4dabf7;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  margin-bottom: 3rem;
+  width: 10rem;
+  transition: 0.25s;
+}
+
+.username:hover,
+.password:hover {
+  width: 20rem;
+}
+
+.submit:hover {
+  cursor: pointer;
+  width: 12rem;
+}
