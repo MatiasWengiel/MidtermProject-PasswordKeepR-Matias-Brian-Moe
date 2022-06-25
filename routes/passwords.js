@@ -11,12 +11,15 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     const userId = req.session.userId;
     const orgId = req.session.orgId;
-    console.log('org ID is ', orgId)
     db.query(getAllOrganizationalPasswords(orgId))
       .then(data => {
         const passwords = data.rows;
 
-        res.json({ passwords }); //We can change this to render the page showing the PWs
+        let templateVars = {
+          passwords
+        }
+        console.log(passwords)
+        res.render('passwords_page', templateVars); //We can change this to render the page showing the PWs
       })
       .catch(err => {
         res
@@ -44,7 +47,7 @@ module.exports = (db) => {
   router.get('/search/:query', (req, res) => {
     const orgId = req.session.orgId;
     const query = req.params.query;
-    console.log('The query was ', query)
+
     db.query(getAllOrganizationalPasswordsFromSearch(orgId, query))
     .then(data => {
       const passwords = data.rows;
