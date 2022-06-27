@@ -1,4 +1,3 @@
-
 const getAllOrganizationalPasswords = (orgId) => {
   return `
   SELECT website_nickname, login_email, login_password, website_url, category_id
@@ -6,8 +5,8 @@ const getAllOrganizationalPasswords = (orgId) => {
   JOIN organizations ON passwords.organization_id = organizations.id
   JOIN categories ON passwords.category_id = categories.id
   WHERE passwords.organization_id = ${orgId};
-  `
-}
+  `;
+};
 
 // const getAllOrganizationalPasswordsWithinCategory = (orgId, category) => {
 //   return `
@@ -17,7 +16,6 @@ const getAllOrganizationalPasswords = (orgId) => {
 //   WHERE passwords.organization_id = ${orgId} AND categories.id = ${category};
 //   ` // Still need to change categories.id to fetch the id from the user selection
 // }
-
 
 // const getAllOrganizationalPasswordsFromSearch = (orgId, query) => {
 //   return `
@@ -30,8 +28,23 @@ const getAllOrganizationalPasswords = (orgId) => {
 //         passwords.organization_id = ${orgId};;
 //   `
 // }
+
+const getEmail = (userId) => {
+  `return SELECT users.email
+  FROM users
+  WHERE users.id = ${userId};`;
+};
+
+const getOrganization = (userId) => {
+  `return SELECT organizations.name
+  FROM organizations
+  JOIN users ON organization_id = organizations.id
+  WHERE organizations.id = ${userId};`;
+};
 module.exports = {
+  getEmail,
+  getOrganization,
   getAllOrganizationalPasswords,
   // getAllOrganizationalPasswordsWithinCategory,
   // getAllOrganizationalPasswordsFromSearch
-}
+};
