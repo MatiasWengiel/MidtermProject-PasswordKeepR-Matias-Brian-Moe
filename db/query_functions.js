@@ -35,12 +35,15 @@ const getEmail = (userId) => {
   WHERE users.id = ${userId};`;
 };
 
+
 const getOrganization = (userId) => {
-  `return SELECT organizations.name
+  return `SELECT organizations.name
   FROM organizations
   JOIN users ON organization_id = organizations.id
-  WHERE organizations.id = ${userId};`;
+  WHERE organizations.id = ${userId};
+  `;
 };
+
 module.exports = {
   getEmail,
   getOrganization,
