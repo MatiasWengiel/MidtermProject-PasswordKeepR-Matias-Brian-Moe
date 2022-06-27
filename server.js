@@ -57,6 +57,9 @@ app.use('/passwords', passwordRoutes(db));
 
 // Home page
 // Warning: avoid creating more routes in this file!
+app.get('/', (req, res) => {
+  res.render('index')
+})
 // Separate them into separate routes files (see above).
 
 app.listen(PORT, () => {
