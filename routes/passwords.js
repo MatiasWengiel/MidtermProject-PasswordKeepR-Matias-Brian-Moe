@@ -3,7 +3,7 @@ const router  = express.Router();
 
 const {
   getAllOrganizationalPasswords,
-  getAllOrganizationalPasswordsWithinCategory,
+  // getAllOrganizationalPasswordsWithinCategory,
   getAllOrganizationalPasswordsFromSearch
 } = require('../db/query_functions')
 
@@ -30,19 +30,19 @@ module.exports = (db) => {
 
   });
 
-  router.get('/search/categories', (req, res) => {
-    const orgId = req.session.orgId;
-    db.query(getAllOrganizationalPasswordsWithinCategory(orgId, 3))
-    .then(data => {
-      const passwords = data.rows;
-      res.json({ passwords });
-    })
-    .catch (err => {
-      res
-        .status(500)
-        .json({error: err.message });
-    });
-  })
+  // router.get('/search/categories', (req, res) => {
+  //   const orgId = req.session.orgId;
+  //   db.query(getAllOrganizationalPasswordsWithinCategory(orgId, 3))
+  //   .then(data => {
+  //     const passwords = data.rows;
+  //     res.json({ passwords });
+  //   })
+  //   .catch (err => {
+  //     res
+  //       .status(500)
+  //       .json({error: err.message });
+  //   });
+  // })
 
   router.get('/search/:query', (req, res) => {
     const orgId = req.session.orgId;
