@@ -1,8 +1,10 @@
 
 const getAllOrganizationalPasswords = (orgId) => {
   return `
-  SELECT website_nickname, login_email, login_password FROM passwords
+  SELECT website_nickname, login_email, login_password, website_url, category_id
+  FROM passwords
   JOIN organizations ON passwords.organization_id = organizations.id
+  JOIN categories ON passwords.category_id = categories.id
   WHERE passwords.organization_id = ${orgId};
   `
 }
