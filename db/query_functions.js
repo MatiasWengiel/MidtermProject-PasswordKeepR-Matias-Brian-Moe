@@ -33,6 +33,8 @@ const getEmail = (userId) => {
   WHERE users.id = ${userId};`;
 };
 
+//
+
 const getOrganization = (userId) => {
   return `SELECT organizations.name
   FROM organizations
