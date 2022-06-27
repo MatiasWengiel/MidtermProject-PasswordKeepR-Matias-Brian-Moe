@@ -1,10 +1,12 @@
+@import './variables';
+
 .nav {
   width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: #0e353d;
-  background-color: #d9e6e9;
+  background-color: $background-navbar;
 
   #logo {
     display: flex;
