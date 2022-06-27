@@ -9,6 +9,26 @@ $(document).ready(function() {
     $(`.${passwordNickname}`).slideDown("slow"); //Slides down the selected password
   })
 
+  $("#show-form").on('click', () =>{
+    $(".new-password").removeClass("hidden");
+  })
+
+  $(".new-password-form").on("submit", function(event){
+    event.preventDefault();
+    console.log("submit password")
+    const password = $(this).find("input").val()
+
+    
+    // const data = {password};
+    const data = $(this).serialize();
+    console.log(data);
+    $.post("/api/passwords", data)
+    .then(res =>{
+      console.log(res) // Adding new password to password
+    })
+  })
+
+
   $('#comms-and-social').click(function() {
     $('.password-content').hide();
     $('.cat1').slideDown("slow");
