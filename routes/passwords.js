@@ -3,7 +3,7 @@ const router  = express.Router();
 
 const {
   getAllOrganizationalPasswords,
-  getAllOrganizationalPasswordsWithinCategory,
+  // getAllOrganizationalPasswordsWithinCategory,
   getAllOrganizationalPasswordsFromSearch
 } = require('../db/query_functions')
 
