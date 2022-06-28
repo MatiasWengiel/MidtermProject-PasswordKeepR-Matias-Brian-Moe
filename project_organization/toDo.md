@@ -20,11 +20,12 @@
   * Create CSS using SASS
   * NOT single-page (so we don't need AJAX here)
 <!-- * Create passwords page -
-  * Create HTML layout
-  * Create CSS using SASS
-  * Use JQuery and AJAX to render the passwords FOR LATER -->
+  * Create HTML layout - Moe
+  * Create CSS using SASS - Moe
+  * Use JQuery and AJAX to render the passwords - Matias -->
 <!-- * Create simple login page HTML and CSS - Brian -->
 <!-- * Create simple registration page for new users - Brian -->
+<!-- * Add login and registration buttons to the home page - Brian ?  -->
 
 * Link the routes and pages together 
   * Categories - Matias
@@ -32,7 +33,6 @@
   * Categories - Matias
 * Create new passwords logic - Moe
   * Password creator with options https://www.npmjs.com/package/generate-password
-<!-- * Add login and registration buttons to the home page - Brian ?  -->
 * Implement SASS - Matias (Weekend)
 * Name and Org query for database - Brian
 * Password editting - Brian
