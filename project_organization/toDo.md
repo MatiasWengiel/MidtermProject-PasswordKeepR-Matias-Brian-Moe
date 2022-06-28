@@ -28,14 +28,15 @@
 <!-- * Add login and registration buttons to the home page - Brian ?  -->
 
 * Link the routes and pages together 
-  * Categories - Matias
+  <!-- * Categories - Matias -->
 * Work on logic for displaying passwords
-  * Categories - Matias
+  <!-- * Categories - Matias -->
 * Create new passwords logic - Moe
   * Password creator with options https://www.npmjs.com/package/generate-password
 * Implement SASS - Matias (Weekend)
-* Name and Org query for database - Brian
+<!-- * Name and Org query for database - Brian  -->
 * Password editting - Brian
+* Fix helpers.js copy bug - Matias
 
 
 
