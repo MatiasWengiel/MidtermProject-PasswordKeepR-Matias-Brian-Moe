@@ -52,12 +52,9 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    const userId = req.session.userId;
-    const orgId = req.session.orgId;
-    const email = req.body.email;
-    const password = req.body.password;
-    db.query(editLogin(email, password, orgId));
-    console.log(userId, orgId);
+    const { userId, orgId } = req.session;
+    const { email, password, label } = req.body;
+    db.query(editLogin(email, password, orgId, label));
   });
 
   router.post("/:id/delete", (req, res) => {

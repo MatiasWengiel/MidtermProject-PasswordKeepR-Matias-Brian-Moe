@@ -43,10 +43,10 @@ const getOrganization = (userId) => {
   `;
 };
 
-const editLogin = (newEmail, newPassword, organizationId) => {
+const editLogin = (newEmail, newPassword, organizationId, nickname) => {
   return `UPDATE passwords
  SET login_email='${newEmail}', login_password='${newPassword}'
- WHERE organization_id=${organizationId};`;
+ WHERE organization_id=${organizationId} AND website_nickname='${nickname}';`;
 };
 
 module.exports = {

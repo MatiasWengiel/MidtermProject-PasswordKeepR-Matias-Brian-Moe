@@ -1,15 +1,18 @@
 $(document).ready(function () {
-  console.log("jquery loaded");
   $(".edit-form").on("submit", function (e) {
     e.preventDefault();
     const email = $(".loginEmail").val();
     const password = $(".loginPassword").val();
-    const data = { email, password };
+    const label = $("#label").text();
+    const data = { email, password, label };
     console.log(data);
     $.ajax({
       type: "POST",
       url: "/passwords",
       data,
     });
+    setTimeout(function () {
+      location.reload(true);
+    }, 250);
   });
 });
