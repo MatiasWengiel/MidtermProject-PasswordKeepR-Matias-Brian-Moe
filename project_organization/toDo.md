@@ -29,16 +29,21 @@
 
 * Link the routes and pages together 
   <!-- * Categories - Matias -->
-* Work on logic for displaying passwords
+<!-- * Work on logic for displaying passwords -->
   <!-- * Categories - Matias -->
-* Create new passwords logic - Moe
-  * Password creator with options https://www.npmjs.com/package/generate-password
+* Create new passwords logic - <!--Moe-->
+  * Connect route to database
+  * Render new passwords
+  * Make pretty
 * Implement SASS - Matias (Weekend)
 <!-- * Name and Org query for database - Brian  -->
 * Password editting - Brian
-* Fix helpers.js copy bug - Matias
-
-
+  * Fix selection bug (only the first PW is working)
+  * Make pretty and slide down
+<!-- * Fix helpers.js copy bug - Matias -->
+* Remove extra things from front page - Matias
+* Login page - Matias
+* Start looking at CSS for SASS variables - Matias
 
 <!-- Stretch -->
 * Registration and login
