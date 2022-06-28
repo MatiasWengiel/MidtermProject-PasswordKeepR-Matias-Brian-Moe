@@ -10,19 +10,17 @@ $(document).ready(function() {
   })
 
   $("#show-form").on('click', () =>{
-    $(".new-password").removeClass("hidden");
+    $(".new-password").slideDown("hidden");
   })
 
   $(".new-password-form").on("submit", function(event){
     event.preventDefault();
-    console.log("submit password")
-    const password = $(this).find("input").val()
+      $(".new-password").slideUp("hidden");
 
-    
+
     // const data = {password};
     const data = $(this).serialize();
-    console.log(data);
-    $.post("/api/passwords", data)
+    $.post("/passwords", data)
     .then(res =>{
       console.log(res) // Adding new password to password
     })

@@ -129,3 +129,14 @@
 display: none;
 }
 
+.form-group{
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 0.5px gray;
+  border-radius: 10px;
+  padding: 5px;
+
+}
+
