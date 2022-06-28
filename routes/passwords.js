@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const generator = require('generate-password');
 
 const {
   getEmail,
@@ -12,7 +13,7 @@ const {
 
 module.exports = (db) => {
 
-  router.get('/new', (req, res) =>{
+  router.get('/new', (req, res) => {
     res.send('<h1>This is the /users page</h1>');
   })
 
@@ -53,6 +54,7 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
+    console.log("This is line 57 in passwords", req.body)
     res.send(`<h1>You have successfully POSTed to create a new password</h1>`);
   });
 
