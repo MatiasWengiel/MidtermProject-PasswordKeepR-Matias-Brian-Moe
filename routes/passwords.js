@@ -3,18 +3,17 @@ const router = express.Router();
 
 const {
   getEmail,
+  editLogin,
   getOrganization,
   getAllOrganizationalPasswords,
   // getAllOrganizationalPasswordsWithinCategory,
-  getAllOrganizationalPasswordsFromSearch
-} = require('../db/query_functions');
-
+  getAllOrganizationalPasswordsFromSearch,
+} = require("../db/query_functions");
 
 module.exports = (db) => {
-
-  router.get('/new', (req, res) =>{
-    res.send('<h1>This is the /users page</h1>');
-  })
+  router.get("/new", (req, res) => {
+    res.send("<h1>This is the /users page</h1>");
+  });
 
   router.get("/", (req, res) => {
     const userId = req.session.userId;
@@ -53,7 +52,9 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    res.send(`<h1>You have successfully POSTed to create a new password</h1>`);
+    const { userId, orgId } = req.session;
+    const { email, password, label } = req.body;
+    db.query(editLogin(email, password, orgId, label));
   });
 
   router.post("/:id/delete", (req, res) => {

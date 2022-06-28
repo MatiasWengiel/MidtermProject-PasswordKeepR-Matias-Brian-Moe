@@ -14,7 +14,6 @@ const getEmail = (userId) => {
   WHERE users.id = ${userId};`;
 };
 
-
 const getOrganization = (userId) => {
   return `SELECT organizations.name
   FROM organizations
@@ -23,8 +22,15 @@ const getOrganization = (userId) => {
   `;
 };
 
+const editLogin = (newEmail, newPassword, organizationId, nickname) => {
+  return `UPDATE passwords
+ SET login_email='${newEmail}', login_password='${newPassword}'
+ WHERE organization_id=${organizationId} AND website_nickname='${nickname}';`;
+};
+
 module.exports = {
   getEmail,
+  editLogin,
   getOrganization,
   getAllOrganizationalPasswords
 };
