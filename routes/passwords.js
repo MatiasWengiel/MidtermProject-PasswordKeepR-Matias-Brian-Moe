@@ -4,18 +4,18 @@ const generator = require('generate-password');
 
 const {
   getEmail,
+  editLogin,
   getOrganization,
   getAllOrganizationalPasswords,
   // getAllOrganizationalPasswordsWithinCategory,
-  getAllOrganizationalPasswordsFromSearch
-} = require('../db/query_functions');
-
+  getAllOrganizationalPasswordsFromSearch,
+} = require("../db/query_functions");
 
 module.exports = (db) => {
 
-  router.get('/new', (req, res) => {
-    res.send('<h1>This is the /users page</h1>');
-  })
+  router.get("/new", (req, res) => {
+    res.send("<h1>This is the /users page</h1>");
+  });
 
   router.get("/", (req, res) => {
     const userId = req.session.userId;
@@ -54,7 +54,13 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
+
     console.log("This is line 57 in passwords", req.body)
+
+    const { userId, orgId } = req.session;
+    const { email, password, label } = req.body;
+    db.query(editLogin(email, password, orgId, label));
+
     res.send(`<h1>You have successfully POSTed to create a new password</h1>`);
   });
 
