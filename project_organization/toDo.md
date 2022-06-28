@@ -12,8 +12,8 @@
     * SELECT passwords based on search bar
   * LOGIN query (see if user and pw match)
   * NEW USER query to add to DB -->
-* Add queries to routes (once ready)
-* Move queries to separate file
+* Add queries to routes (once ready) 
+<!-- * Move queries to separate file - Matias  -->
 
 * Flesh out front page - focus on functionality
   * Finish HTML layout

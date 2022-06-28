@@ -9,5 +9,6 @@ $(document).ready(function() {
       $('.fa-check').removeClass("fa-check").addClass("fa-copy")
       $(this).children().removeClass("fa-copy").addClass("fa-check")
     })
+    .catch( err => console.log('error', err))
   })
 });
