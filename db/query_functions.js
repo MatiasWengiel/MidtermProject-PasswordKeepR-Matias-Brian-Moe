@@ -30,11 +30,10 @@ const getAllOrganizationalPasswords = (orgId) => {
 // }
 
 const getEmail = (userId) => {
-  `return SELECT users.email
+  return `SELECT users.email
   FROM users
   WHERE users.id = ${userId};`;
 };
-
 
 const getOrganization = (userId) => {
   return `SELECT organizations.name
@@ -44,8 +43,15 @@ const getOrganization = (userId) => {
   `;
 };
 
+const editLogin = (newEmail, newPassword, organizationId) => {
+  return `UPDATE passwords
+ SET login_email='${newEmail}', login_password='${newPassword}'
+ WHERE organization_id=${organizationId};`;
+};
+
 module.exports = {
   getEmail,
+  editLogin,
   getOrganization,
   getAllOrganizationalPasswords,
   // getAllOrganizationalPasswordsWithinCategory,
