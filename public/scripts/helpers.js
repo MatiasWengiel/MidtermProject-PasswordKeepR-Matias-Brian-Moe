@@ -34,9 +34,6 @@ $(document).ready(function() {
       $('[name="password"]').val(randPass);
     })
   })
-
-})
-
   // Copy the text in username & password fields
 
   $('.copy-btn').click(function() {
@@ -46,6 +43,9 @@ $(document).ready(function() {
       $(this).children().removeClass("fa-copy").addClass("fa-check")
     })
     .catch( err => console.log('error', err))
+})
+
+
   })
-});
+// });
 
