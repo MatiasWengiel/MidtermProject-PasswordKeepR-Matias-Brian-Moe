@@ -30,7 +30,7 @@ const getAllOrganizationalPasswords = (orgId) => {
 // }
 
 const getEmail = (userId) => {
-  `return SELECT users.email
+  return `SELECT users.email
   FROM users
   WHERE users.id = ${userId};`;
 };
