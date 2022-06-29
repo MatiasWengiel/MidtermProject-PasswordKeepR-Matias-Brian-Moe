@@ -13,7 +13,7 @@
   * LOGIN query (see if user and pw match)
   * NEW USER query to add to DB -->
 
-- Add queries to routes (once ready)
+<!-- - Add queries to routes (once ready) -->
 <!-- * Move queries to separate file - Matias  -->
 
 <!-- * Flesh out front page - focus on functionality -->
