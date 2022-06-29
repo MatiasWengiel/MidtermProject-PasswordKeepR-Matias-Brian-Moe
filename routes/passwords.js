@@ -6,6 +6,7 @@ const {
   getEmail,
   editLogin,
   getOrganization,
+  addNewPassword,
   getAllOrganizationalPasswords,
   // getAllOrganizationalPasswordsWithinCategory,
   getAllOrganizationalPasswordsFromSearch,
@@ -46,6 +47,9 @@ module.exports = (db) => {
       });
   });
 
+
+
+
   router.post("/:id", (req, res) => {
     const passwordId = req.params.id;
     res.send(
@@ -56,10 +60,15 @@ module.exports = (db) => {
   router.post("/", (req, res) => {
 
     console.log("This is line 57 in passwords", req.body)
+    console.log("This is line 58 in passwords", req.session)
+
 
     const { userId, orgId } = req.session;
+    const { loginEmail, newPassword, account, url, category } = req.body
     const { email, password, label } = req.body;
-    db.query(editLogin(email, password, orgId, label));
+    db.query(addNewPassword(), [loginEmail, newPassword, account, url, category, orgId])
+    //console.log(addNewPassword);
+    //db.query(editLogin(email, password, orgId, label));
 
     res.send(`<h1>You have successfully POSTed to create a new password</h1>`);
   });

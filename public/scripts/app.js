@@ -22,8 +22,10 @@ $(document).ready(function() {
     const data = $(this).serialize();
     $.post("/passwords", data)
     .then(res =>{
-      console.log(res) // Adding new password to password
+      console.log("This is data", res) // Adding new password to password
+
     })
+
   })
 
 

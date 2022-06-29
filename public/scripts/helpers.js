@@ -9,7 +9,7 @@ $(document).ready(function() {
       console.log("This is the password function")
       e.preventDefault();
 
-      let passLength = $('select').val()
+      let passLength = $('#character-number').val()
       let = charset = ''
       let = randPass = '';
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
         randPass += charset.substring(randNum, randNum + 1);
       }
       console.log({randPass})
-      $('[name="password"]').val(randPass);
+      $('[name="newPassword"]').val(randPass);
     })
   })
   // Copy the text in username & password fields

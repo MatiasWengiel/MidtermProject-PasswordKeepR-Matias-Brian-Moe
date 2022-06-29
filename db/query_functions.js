@@ -22,6 +22,12 @@ const getOrganization = (userId) => {
   `;
 };
 
+const addNewPassword = (loginEmail, newPassword, account, url, category, orgId) => {
+  return `INSERT INTO passwords (login_email, login_password, website_nickname, website_url, category_id, organization_id)
+  VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`
+
+};
+
 const editLogin = (newEmail, newPassword, organizationId, nickname) => {
   return `UPDATE passwords
  SET login_email='${newEmail}', login_password='${newPassword}'
@@ -32,5 +38,6 @@ module.exports = {
   getEmail,
   editLogin,
   getOrganization,
+  addNewPassword,
   getAllOrganizationalPasswords
 };
