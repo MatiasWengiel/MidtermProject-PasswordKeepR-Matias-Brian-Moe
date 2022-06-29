@@ -1,47 +1,24 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 62.5%;
-}
+@import './variables';
 
 body {
-  font-family: $font-primary;
-  line-height: 1;
-  font-weight: 400;
-  color: #555;
-  background: #4dabf7;
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.25fr 2fr 0.5fr;
-}
-
-.login-container {
-  grid-column: 2;
-  grid-row: 2;
-  align-self: start;
-  justify-self: center;
+  @include flex-centered;
+  background: $background-dark;
 }
 
 .login-form {
-  background: #e7f5ff;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background-primary;
   width: 40rem;
   text-align: center;
   height: 30rem;
 }
 
-.heading {
-  padding-top: 2.5rem;
-}
-
 .username {
-  display: block;
   text-align: center;
-  border: 2px solid #4dabf7;
+  border: 2px solid $background-dark;
   border-radius: 2rem;
   padding: 1rem 3rem;
   width: 15rem;
@@ -51,9 +28,8 @@ body {
 }
 
 .password {
-  display: block;
   text-align: center;
-  border: 2px solid #4dabf7;
+  border: 2px solid $background-dark;
   border-radius: 2rem;
   padding: 1rem 3rem;
   width: 15rem;
@@ -63,8 +39,8 @@ body {
 }
 
 .submit {
-  border: 2px solid #4dabf7;
-  background: #4dabf7;
+  border: 2px solid $background-dark;
+  // background: #4dabf7;
   padding: 1rem 2rem;
   border-radius: 4rem;
   margin-bottom: 3rem;

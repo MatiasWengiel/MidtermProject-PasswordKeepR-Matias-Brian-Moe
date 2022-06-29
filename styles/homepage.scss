@@ -1,197 +1,90 @@
-/*********************************/
-/* Import SASS Variables */
-/*********************************/
 @import './variables';
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: $font-primary;
-  line-height: 1;
-  font-weight: 400;
-  color: $background-navbar;
-}
-
-/*********************************/
-/* General Components */
-/*********************************/
-
-.heading-primary {
-  font-size: 5.2rem;
-  font-weight: 700;
-  line-height: 1.05;
-  color: #333;
-  letter-spacing: -0.5px;
-  margin-bottom: 3.2rem;
-}
-
-.btn:link,
-.btn:visited {
-  background-color: #4dabf7;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: inline-block;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.btn--signup:link,
-.btn--signup:visited {
-  background-color: #e67e22;
-  color: #fff;
-}
-
-.btn--signup:hover,
-.btn--signup:active {
-  background-color: #cf711f;
-}
-
-.btn--learnmore:link,
-.btn--learnmore:visited {
-  background-color: #fff;
-  color: #555;
-}
-
-.btn--learnmore:hover,
-.btn--learnmore:active {
-  background-color: #fdf2e9;
-  color: #555;
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.margin-right-sm {
-  margin-right: 1.6rem !important;
-}
-
-/*********************************/
-/* Header */
-/*********************************/
-
-.header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fdf2e9;
-  height: 9.6rem;
-  padding: 0 4.8rem;
-}
+  background-color: $background-dark;
+  color: $font-color-primary;
+  height: 100px;
+  padding: 0 15px;
 
-.logo {
-  height: 2.2rem;
-}
+  .main-nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+  }
 
-/*********************************/
-/* Navigation */
-/*********************************/
+  .link:link,
+  .link:visited {
+    text-decoration: none;
+    color: $font-color-primary;
+    font-weight: 500;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+  }
 
-.main-nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 3.2rem;
-}
+  .link:hover,
+  .link:active {
+    color: #cf711f;
+  }
 
-.link:link,
-.link:visited {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  font-size: 1.8rem;
-  transition: all 0.3s;
-}
+  .link.signup:link,
+  .link.signup:visited {
+    padding: 1.2rem 2.4rem;
+    border-radius: 9px;
+    color: #fff;
+    background-color: #2f3640;
+  }
 
-.link:hover,
-.link:active {
-  color: #cf711f;
-}
-
-.link.signup:link,
-.link.signup:visited {
-  padding: 1.2rem 2.4rem;
-  border-radius: 9px;
-  color: #fff;
-  background-color: #e67e22;
-}
-
-.link.signup:hover,
-.link.signup:active {
-  background-color: #cf711f;
+  .link.signup:hover,
+  .link.signup:active {
+    background-color: #cf711f;
+  }
 }
 
 /*********************************/
 /* Hero Section */
 /*********************************/
-
-.hero-section {
-  background-color: #fdf2e9;
-  padding: 4.8rem 0 9.6rem 0;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
 }
 
 .hero {
-  max-width: 130rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
   align-items: center;
-  gap: 9.6rem;
 }
 
+.hero-text {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 40vw;
+}
 .heading-primary {
-  font-size: 5.2rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.05;
-  color: #333;
-  letter-spacing: -0.5px;
-  margin-bottom: 3.2rem;
+  color: $font-color-dark;
 }
 
 .hero-description {
   font-size: 2rem;
   line-height: 1.6;
-  margin-bottom: 4.8rem;
 }
 
 .hero-img {
-  max-width: 100%;
+  max-width: 40vw;
 }
 
-.trusted {
-  display: flex;
-  margin-top: 8rem;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-.trusted-imgs img {
-  height: 4.8rem;
-  width: 4.8rem;
-  border-radius: 50%;
-  margin-right: -1.6rem;
-  border: 3px solid #fdf2e9;
-}
-
-.trusted-imgs img:last-child {
-  margin: 0;
-}
-
-.trusted-text {
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.trusted-text span {
-  color: #cf711f;
-  font-weight: 700;
+.sign-up-button {
+  font-size: 1.5rem;
 }

@@ -63,6 +63,14 @@ app.use('/passwords', passwordRoutes(db)); // this one return HTML
 app.get('/', (req, res) => {
   res.render('index')
 })
+
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+
+app.get('/register', (req, res) => {
+  res.render('register')
+})
 // Separate them into separate routes files (see above).
 
 app.listen(PORT, () => {

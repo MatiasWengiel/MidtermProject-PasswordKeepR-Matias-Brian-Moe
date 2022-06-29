@@ -12,36 +12,38 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles/login.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/login-and-registration.css" />
     <title>Login</title>
   </head>
+
   <body>
-    <section class="login-container">
-      <form action="#" class="login-form">
-        <h1 class="heading">Login</h1>
+    <form action="#" class="login-form">
+      <h1 class="heading">Login</h1>
 
-        <label for="username"></label>
-        <input
-          type="text"
-          placeholder="Username"
-          id="username"
-          class="username"
-          name="username"
-        />
-        <label for="password"></label>
-        <input
-          type="password"
-          placeholder="Password"
-          id="password"
-          class="password"
-          name="password"
-        />
+      <label for="username"></label>
+      <input
+        type="text"
+        placeholder="Username"
+        id="username"
+        class="username"
+        name="username"
+      />
+      <label for="password"></label>
+      <input
+        type="password"
+        placeholder="Password"
+        id="password"
+        class="password"
+        name="password"
+      />
 
-        <input type="submit" id="submit" action="#" class="submit" />
-        <div>
-          Don't have an account? Click <a href="#">here</a> to Register.
-        </div>
-      </form>
-    </section>
+      <button type="submit" id="submit" action="#" class="submit"> Submit</button>
+
+      <div>
+        Don't have an account? Click <a href="#">here</a> to Register.
+      </div>
+    </form>
+
   </body>
 </html>
