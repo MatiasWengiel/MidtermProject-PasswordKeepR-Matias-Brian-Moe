@@ -16,8 +16,7 @@ module.exports = (db) => {
   });
 
   router.get("/", (req, res) => {
-    const userId = req.session.userId;
-    const orgId = req.session.orgId;
+    const { userId, orgId } = req.session;
 
     db.query(getEmail(orgId))
       .then((data) => {
@@ -28,14 +27,12 @@ module.exports = (db) => {
 
           db.query(getAllOrganizationalPasswords(orgId)).then((data) => {
             const passwords = data.rows;
-            console.log(passwords);
 
             let templateVars = {
               passwords,
               email,
               organization,
             };
-
             res.render("passwords_page", templateVars); //We can change this to render the page showing the PWs
           });
         });
