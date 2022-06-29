@@ -73,17 +73,20 @@ module.exports = (db) => {
   //     });
   // });
 
-
   router.post("/", (req, res) => {
-
     const { userId, orgId } = req.session;
-    const { loginEmail, newPassword, account, url, category } = req.body
-    const { email, password, label } = req.body;
-    db.query(addNewPassword(), [loginEmail, newPassword, account, url, category, orgId])
-    db.query(editLogin(email, password, orgId, label));
+    const { loginEmail, newPassword, account, url, category } = req.body;
+    // const { email, password, label } = req.body;
+    db.query(addNewPassword(), [
+      loginEmail,
+      newPassword,
+      account,
+      url,
+      category,
+      orgId,
+    ]);
 
-
-    res.send(`<h1>You have successfully POSTed to create a new password</h1>`);
+    // res.redirect("passwords");
   });
 
   router.post("/:id", (req, res) => {
