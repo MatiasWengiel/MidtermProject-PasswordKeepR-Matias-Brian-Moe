@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-
 const {
   getEmail,
   editLogin,
@@ -12,14 +11,12 @@ const {
 } = require("../db/query_functions");
 
 module.exports = (db) => {
-
   router.get("/new", (req, res) => {
     res.send("<h1>This is the /users page</h1>");
   });
 
   router.get("/", (req, res) => {
-    const userId = req.session.userId;
-    const orgId = req.session.orgId;
+    const { userId, orgId } = req.session;
 
     db.query(getEmail(orgId))
       .then((data) => {
@@ -36,7 +33,6 @@ module.exports = (db) => {
               email,
               organization,
             };
-
             res.render("passwords_page", templateVars); //We can change this to render the page showing the PWs
           });
         });
@@ -48,19 +44,13 @@ module.exports = (db) => {
 
   router.post("/:id", (req, res) => {
     const passwordId = req.params.id;
-    res.send(
-      `<h1>You have successfully POSTed for password ID ${passwordId}<h1>`
-    );
+    const { loginEmail, loginPassword } = req.body;
+    const { orgId } = req.session;
+    db.query(editLogin(loginEmail, loginPassword, orgId, passwordId));
   });
 
   router.post("/", (req, res) => {
-
-    console.log("This is line 57 in passwords", req.body)
-
-    const { userId, orgId } = req.session;
-    const { email, password, label } = req.body;
-    db.query(editLogin(email, password, orgId, label));
-
+    console.log("This is line 57 in passwords", req.body);
     res.send(`<h1>You have successfully POSTed to create a new password</h1>`);
   });
 
