@@ -1,18 +1,16 @@
 $(document).ready(function () {
   $(".edit-form").on("submit", function (e) {
     e.preventDefault();
-    const email = $(".loginEmail").val();
-    const password = $(".loginPassword").val();
-    const label = $("#label").text();
-    const data = { email, password, label };
-    console.log(data);
+    const formValues = $(this).serialize();
+    const url = $(this).attr("action");
     $.ajax({
       type: "POST",
-      url: "/passwords",
-      data,
+      url,
+      data: formValues,
     });
     setTimeout(function () {
       location.reload(true);
-    }, 250);
+    }, 100);
   });
+  $("#edit-button");
 });
