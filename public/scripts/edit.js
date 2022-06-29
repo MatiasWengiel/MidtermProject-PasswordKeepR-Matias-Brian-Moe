@@ -12,5 +12,8 @@ $(document).ready(function () {
       location.reload(true);
     }, 100);
   });
-  $("#edit-button");
+  $(".edit-button").click(function () {
+    $(".edit-form-container").slideToggle("fast");
+  });
+  $(".edit-form-container").hide();
 });
