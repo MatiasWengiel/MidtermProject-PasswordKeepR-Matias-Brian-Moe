@@ -1,6 +1,6 @@
 const getAllOrganizationalPasswords = (orgId) => {
   return `
-  SELECT website_nickname, login_email, login_password, website_url, category_id
+  SELECT website_nickname, login_email, login_password, website_url, category_id, passwords.id
   FROM passwords
   JOIN organizations ON passwords.organization_id = organizations.id
   JOIN categories ON passwords.category_id = categories.id
@@ -22,15 +22,15 @@ const getOrganization = (userId) => {
   `;
 };
 
-const editLogin = (newEmail, newPassword, organizationId, nickname) => {
+const editLogin = (newEmail, newPassword, organizationId, passwordId) => {
   return `UPDATE passwords
  SET login_email='${newEmail}', login_password='${newPassword}'
- WHERE organization_id=${organizationId} AND website_nickname='${nickname}';`;
+ WHERE organization_id=${organizationId} AND passwords.id='${passwordId}';`;
 };
 
 module.exports = {
   getEmail,
   editLogin,
   getOrganization,
-  getAllOrganizationalPasswords
+  getAllOrganizationalPasswords,
 };
