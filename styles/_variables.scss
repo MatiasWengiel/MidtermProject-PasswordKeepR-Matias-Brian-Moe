@@ -1,5 +1,20 @@
 $font-primary: "Rubik", sans-serif;
+$font-color-primary: antiquewhite;
+$font-color-dark: #1b2226;
 
-$background-primary: lavenderblush;
-$background-navbar: #d9e6e9
+$background-primary: #d9e1e2;
+$background-dark: #333f48;
 
+@mixin search-box-expand {
+  transition: 0.4s;
+  width: 90%;
+  padding: 0 6px;
+  top: 50px;
+  color: white;
+}
+
+@mixin flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

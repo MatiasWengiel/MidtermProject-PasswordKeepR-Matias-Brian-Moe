@@ -14,48 +14,34 @@
       rel="stylesheet"
     />
     <!-- Website stylesheets -->
+    <link rel="stylesheet" href="../styles/layout.css" />
     <link rel="stylesheet" href="../styles/homepage.css" />
     <!-- Website JS -->
     <script type="text/javascript" src="../scripts/app.js"></script>
     <title>PasswordKeeper</title>
   </head>
+
   <body>
-    <header class="header">
-      <img class="logo" alt="PasswordKeeper Logo" src="" />
+    <header>
+      <h2 id="logo"><span>Password</span>KeepR</h2>
       <nav class="main-nav">
-        <ul class="main-nav-links">
-          <li><a class="link" href="#">Features</a></li>
-          <li><a class="link" href="#">Pricing</a></li>
-          <li><a class="link" href="#">Login</a></li>
-          <li><a class="link signup" href="#">Sign Up</a></li>
-        </ul>
+        <div class="main-nav-links">
+          <a class="link" href="#">Login</a>
+          <a class="link signup" href="#">Sign Up</a>
+        </div>
       </nav>
     </header>
 
     <main>
-      <section class="hero-section">
-        <div class="hero">
-          <div class="hero-text-box">
-            <h1 class="heading-primary">One Password for Everything</h1>
-            <p class="hero-description">
-              PasswordKeeper generates strong passwords and stores them all in
-              one convinent location. You now only need to remember one master
-              password.
-            </p>
-            <a href="#" class="btn btn--signup margin-right-sm">Sign Up Now!</a>
-            <a href="#" class="btn btn--learnmore">Learn More &rarr;</a>
-            <div class="trusted">
-              <div class="trusted-imgs">
-                ..
-                <img src="../imgs/customer-1.jpg" alt="Customer Photo" />
-                <img src="../imgs/customer-2.jpg" alt="Customer Photo" />
-                <img src="../imgs/customer-3.jpg" alt="Customer Photo" />
-                <img src="../imgs/customer-4.jpg" alt="Customer Photo" />
-              </div>
-              <p class="trusted-text">
-                <span>250,000+</span> trust us with their passwords!
-              </p>
-            </div>
+      <section class="hero">
+        <div class="hero-text">
+          <h1 class="heading-primary">One Password for Everything</h1>
+          <p class="hero-description">
+            PasswordKeeper generates strong passwords and stores them all in
+            one convinent location. You now only need to remember one master
+            password.
+          </p>
+          <button class="sign-up-button">Sign Up Now!</button>
           </div>
           <div class="hero-img-box">
             <img
@@ -63,7 +49,6 @@
               class="hero-img"
             />
           </div>
-        </div>
       </section>
     </main>
   </body>
