@@ -5,20 +5,21 @@
   * 3-4 passwords per org -->
 <!-- * Create wireframe diagram of website (like a template) - Brian
 * Create routes - as single page app - Matias -->
-<!-- * Create queries 
+<!-- * Create queries
   * SELECT the following FROM passwords that match organization: - Matias
     * SELECT all passwords
     * SELECT passwords based on category
     * SELECT passwords based on search bar
   * LOGIN query (see if user and pw match)
   * NEW USER query to add to DB -->
-* Add queries to routes (once ready) 
+
+<!-- - Add queries to routes (once ready) -->
 <!-- * Move queries to separate file - Matias  -->
 
-* Flesh out front page - focus on functionality
-  * Finish HTML layout
-  * Create CSS using SASS
-  * NOT single-page (so we don't need AJAX here)
+<!-- * Flesh out front page - focus on functionality -->
+  <!-- * Finish HTML layout -->
+  <!-- * Create CSS using SASS -->
+  <!-- * NOT single-page (so we don't need AJAX here) -->
 <!-- * Create passwords page -
   * Create HTML layout - Moe
   * Create CSS using SASS - Moe
