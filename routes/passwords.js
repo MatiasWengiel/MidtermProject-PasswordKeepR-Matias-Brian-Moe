@@ -11,6 +11,22 @@ const {
   getAllOrganizationalPasswordsFromSearch,
 } = require("../db/query_functions");
 
+const alphabetizePasswords = (passwords) => { //Only helper function server-side, if more are needed will move to dedicated
+  return passwords.sort((firstPW, secondPW) => {
+    let lowerCaseN1 = firstPW.website_nickname.toLowerCase();
+    let lowerCaseN2 = secondPW.website_nickname.toLowerCase();
+
+    if (lowerCaseN1 > lowerCaseN2) {
+      return 1
+    } else if (lowerCaseN1 < lowerCaseN2) {
+      return -1
+    } else {
+      return 0
+    }
+  });
+};
+
+
 module.exports = (db) => {
   router.get("/new", (req, res) => {
     res.send("<h1>This is the /users page</h1>");
@@ -27,7 +43,7 @@ module.exports = (db) => {
           const organization = data.rows[0].name;
 
           db.query(getAllOrganizationalPasswords(orgId)).then((data) => {
-            const passwords = data.rows;
+            const passwords = alphabetizePasswords(data.rows);
 
             let templateVars = {
               passwords,
@@ -43,40 +59,10 @@ module.exports = (db) => {
       });
   });
 
-  // router.get("/json", (req, res) => {
-  //   const userId = req.session.userId;
-  //   const orgId = req.session.orgId;
-
-  //   db.query(getEmail(orgId))
-  //     .then((data) => {
-  //       const email = data.rows[0].email;
-
-  //       db.query(getOrganization(orgId)).then((data) => {
-  //         const organization = data.rows[0].name;
-
-  //         db.query(getAllOrganizationalPasswords(orgId)).then((data) => {
-  //           const passwords = data.rows;
-
-  //           let templateVars = {
-  //             passwords,
-  //             email,
-  //             organization,
-  //           };
-
-  // //            res.render("passwords_page", templateVars); //We can change this to render the page showing the PWs
-  //           res.json(templateVars);
-  //         });
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).json({ error: err.message });
-  //     });
-  // });
 
   router.post("/", (req, res) => {
     const { userId, orgId } = req.session;
     const { loginEmail, newPassword, account, url, category } = req.body;
-    // const { email, password, label } = req.body;
     db.query(addNewPassword(), [
       loginEmail,
       newPassword,
