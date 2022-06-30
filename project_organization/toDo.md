@@ -5,20 +5,21 @@
   * 3-4 passwords per org -->
 <!-- * Create wireframe diagram of website (like a template) - Brian
 * Create routes - as single page app - Matias -->
-<!-- * Create queries 
+<!-- * Create queries
   * SELECT the following FROM passwords that match organization: - Matias
     * SELECT all passwords
     * SELECT passwords based on category
     * SELECT passwords based on search bar
   * LOGIN query (see if user and pw match)
   * NEW USER query to add to DB -->
-* Add queries to routes (once ready) 
+
+<!-- - Add queries to routes (once ready) -->
 <!-- * Move queries to separate file - Matias  -->
 
-* Flesh out front page - focus on functionality
-  * Finish HTML layout
-  * Create CSS using SASS
-  * NOT single-page (so we don't need AJAX here)
+<!-- * Flesh out front page - focus on functionality -->
+  <!-- * Finish HTML layout -->
+  <!-- * Create CSS using SASS -->
+  <!-- * NOT single-page (so we don't need AJAX here) -->
 <!-- * Create passwords page -
   * Create HTML layout - Moe
   * Create CSS using SASS - Moe
@@ -27,24 +28,25 @@
 <!-- * Create simple registration page for new users - Brian -->
 <!-- * Add login and registration buttons to the home page - Brian ?  -->
 
-* Link the routes and pages together 
-  <!-- * Categories - Matias -->
-<!-- * Work on logic for displaying passwords -->
-  <!-- * Categories - Matias -->
-* Create new passwords logic - <!--Moe-->
-  * Connect route to database
-  * Render new passwords
-  * Make pretty
-* Implement SASS - Matias (Weekend)
-<!-- * Name and Org query for database - Brian  -->
-* Password editting - Brian
-  * Fix selection bug (only the first PW is working)
-  * Make pretty and slide down
-<!-- * Fix helpers.js copy bug - Matias -->
-* Remove extra things from front page - Matias
-* Login page - Matias
-* Start looking at CSS for SASS variables - Matias
+- Link the routes and pages together
+    <!-- * Categories - Matias -->
+  <!-- * Work on logic for displaying passwords -->
+    <!-- * Categories - Matias -->
+  <!-- * Create new passwords logic - Moe -->
+    <!-- * Connect route to database
+    * Render new passwords
+    * Make pretty -->
+- Implement SASS - Matias (Weekend)
+  <!-- * Name and Org query for database - Brian  -->
+  <!-- * Password editting - Brian -->
+    <!-- * Fix selection bug (only the first PW is working)
+    * Make pretty and slide down -->
+  <!-- * Fix helpers.js copy bug - Matias -->
+  <!-- * Remove extra things from front page - Matias -->
+  <!-- * Login page - Matias -->
+  <!-- * Start looking at CSS for SASS variables - Matias -->
 
 <!-- Stretch -->
-* Registration and login
-* Registration and login errors using jQuery
+
+- Registration and login
+- Registration and login errors using jQuery
