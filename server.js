@@ -46,14 +46,12 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
 const passwordRoutes = require('./routes/passwords');
 const passwordApiRoutes = require('./routes/passwordsApi');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
 app.use('/passwords', passwordRoutes(db)); // this one return HTML
 // app.use('/api/passwords', passwordApiRoutes(db)); // this one return json
 // Note: mount other resources here, using the same pattern above
@@ -64,11 +62,11 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/login', (req, res) => {
+app.get('/login', (req, res) => { //Added to easily render page. Will fix/move before submission
   res.render('login')
 })
 
-app.get('/register', (req, res) => {
+app.get('/register', (req, res) => {//Added to easily render page. Will fix/move before submission
   res.render('register')
 })
 // Separate them into separate routes files (see above).
