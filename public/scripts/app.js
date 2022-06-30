@@ -14,75 +14,48 @@ $(document).ready(function () {
   })
 
   $(".new-password-form").on("submit", function (event) {
-    //event.preventDefault();
-    //$(".new-password").slideUp("hidden");
-
-
-
     const data = $(this).serialize();
     $.post("/passwords", data)
-      .then(res => {
-      })
+    });
 
-     });
-
-    // // Define a function called loadTweets that is responsible for
-    // //fetching tweets from the http://localhost:8080/tweets page.
-    // const loadPassword = function () {
-
-    //   $.get("http://localhost:8080/passwords/json")
-    //     .then(function (morePost) {
-
-    //       renderPassword(morePost);
-    //     });
-
-    // };
-
-    // // Define a function called renderTweets,responsible for taking in an array of tweet objects
-    // // and then appending each one to the #tweets-container.
-    // const renderPassword = function (passwords) {
-    //   console.log("this is passwords obj",passwords)
-    //   for (let password in passwords.passwords) {
-    //     const userPassword = $(createpasswordElement(password));
-    //     console.log("This is the user password", userPassword)
-    //     //userPassword.find(".password-list li").text(password.content.text);
-    //     $('.password-list').prepend(userPassword);
-    //   }
-
-    // };
-
-    // // define a function createTweetElement that takes in a tweet object and is responsible for returning
-    // //a tweet <article> element containing the entire HTML structure of the tweet.
-    // const createpasswordElement = function(password) {
-    //   console.log("this is pass",password)
-    //   let $password = $(``);
-
-    //   return $password;
-
-    // };
-
-    // loadPassword();
-
-
-
+    // Show passwords in each category
     $('#comms-and-social').click(function () {
-      $('.password-content').hide();
-      $('.cat1').slideDown("slow");
-    })
-
-    $('#supplies').click(function () {
-      $('.password-content').hide();
-      $('.cat2').slideDown("slow");
-    })
-
-    $('#work-portals').click(function () {
-      $('.password-content').hide();
-      $('.cat3').slideDown("slow");
-    })
-
-    $('#all-passwords').click(function () {
-      $('.password-content').slideDown("slow");
-    })
+    $('.password-content').hide();
+    $('.cat1').slideDown("slow");
   })
+
+  $('#supplies').click(function () {
+    $('.password-content').hide();
+    $('.cat2').slideDown("slow");
+  })
+
+  $('#work-portals').click(function () {
+    $('.password-content').hide();
+    $('.cat3').slideDown("slow");
+  })
+
+  $('#all-passwords').click(function () {
+    $('.password-content').slideDown("slow");
+  })
+
+  // Updates password information through edit button
+  $(".edit-form").on("submit", function (e) {
+    e.preventDefault();
+    const formValues = $(this).serialize();
+    const url = $(this).attr("action");
+    $.ajax({
+      type: "POST",
+      url,
+      data: formValues,
+    });
+    setTimeout(function () {
+      location.reload(true);
+    }, 100);
+  });
+
+  $(".edit-button").click(function () {
+    $(".edit-form-container").slideToggle("fast");
+  });
+})
 ;
 
