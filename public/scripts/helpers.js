@@ -1,12 +1,8 @@
 $(document).ready(function() {
-  console.log('helpers is loaded')
 
-  // Generate Password is a (relatively) extensive library for generating random and unique passwords.
-
+// Random Password Generator
   $(function () {
-    //'use strict'
     $('#generate-password').on('click', function (e) {
-      console.log("This is the password function")
       e.preventDefault();
 
       let passLength = $('#character-number').val()
@@ -30,10 +26,10 @@ $(document).ready(function() {
         let randNum = Math.floor(Math.random() * charset.length);
         randPass += charset.substring(randNum, randNum + 1);
       }
-      console.log({randPass})
       $('[name="newPassword"]').val(randPass);
     })
   })
+
   // Copy the text in username & password fields
 
   $('.copy-btn').click(function() {
@@ -44,6 +40,7 @@ $(document).ready(function() {
     })
     .catch( err => console.log('error', err))
   })
+
 });
 
 
