@@ -32,19 +32,29 @@
 <!-- * Work on logic for displaying passwords -->
   <!-- * Categories - Matias -->
 * Create new passwords logic - <!--Moe-->
-  * Connect route to database
-  * Render new passwords
-  * Make pretty
-* Implement SASS - Matias (Weekend)
+  <!-- * Connect route to database
+  * Render new passwords -->
+  * Make pretty and toggleable
+<!-- * Implement SASS - Matias (Weekend) -->
 <!-- * Name and Org query for database - Brian  -->
 * Password editting - Brian
-  * Fix selection bug (only the first PW is working)
+  <!-- * Fix selection bug (only the first PW is working) -->
   * Make pretty and slide down
 <!-- * Fix helpers.js copy bug - Matias -->
-* Remove extra things from front page - Matias
-* Login page - Matias
-* Start looking at CSS for SASS variables - Matias
+<!-- * Remove extra things from front page - Matias -->
+<!-- * Login page - Matias
+* Start looking at CSS for SASS variables - Matias -->
+* Connect front page to passwords page Maybe spoof login page - Brian
 
 <!-- Stretch -->
+* Search button - Matias
+* Alphabetize the passwords - Matias
+* Figure out bouncy animation bug
 * Registration and login
 * Registration and login errors using jQuery
+
+<!-- Learned -->
+* Git was challenging at first, but we are more comfortable with it
+* Work on the back end first, then database, then front end
+* Agree on CSS standards if more than one person will work on FE stuff
+* We rotated the work so that we all got experiene with all levels of the stack
