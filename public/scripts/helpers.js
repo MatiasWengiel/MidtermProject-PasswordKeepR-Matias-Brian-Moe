@@ -43,9 +43,7 @@ $(document).ready(function() {
       $(this).children().removeClass("fa-copy").addClass("fa-check")
     })
     .catch( err => console.log('error', err))
-})
-
-
   })
-// });
+});
+
 
