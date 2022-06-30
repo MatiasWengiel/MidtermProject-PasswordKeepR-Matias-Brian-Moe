@@ -1,14 +1,14 @@
 @import './variables';
 
 nav {
-  width: 200px;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: $background-dark;
   color: $font-color-primary;
-  position: fixed;
+  // position: fixed;
   padding-bottom:18px;
 
   .logo-and-search {
