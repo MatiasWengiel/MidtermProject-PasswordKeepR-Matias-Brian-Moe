@@ -1,9 +1,9 @@
-$font-primary: "Rubik", sans-serif;
-$font-color-primary: antiquewhite;
+$font-primary: 'Rubik', sans-serif;
+$font-color-primary: #212529;
 $font-color-dark: #1b2226;
 
-$background-primary: #fdf2e9;
-$background-dark: #cf711f;
+$background-primary: #f1f3f5;
+$background-dark: #4dabf7;
 
 @mixin search-box-expand {
   transition: 0.4s;
