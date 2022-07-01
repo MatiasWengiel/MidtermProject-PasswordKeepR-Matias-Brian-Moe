@@ -1,4 +1,8 @@
-@import './variables';
+@import "./variables";
+
+body {
+  font-family: $font-primary;
+}
 
 header {
   display: flex;
@@ -13,7 +17,8 @@ header {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 3.2rem;
+    gap: 0.8rem;
+    font-size: 1.8rem;
   }
 
   .link:link,
@@ -27,7 +32,7 @@ header {
 
   .link:hover,
   .link:active {
-    color: #cf711f;
+    background-color: #f1f3f5;
   }
 
   .link.signup:link,
@@ -36,11 +41,6 @@ header {
     border-radius: 9px;
     color: #fff;
     background-color: #2f3640;
-  }
-
-  .link.signup:hover,
-  .link.signup:active {
-    background-color: #cf711f;
   }
 }
 
@@ -52,13 +52,14 @@ main {
   justify-content: center;
   align-items: flex-start;
   height: 100%;
+  margin-top: 60px;
 }
 
 .hero {
   width: 90%;
   display: flex;
   flex-flow: row wrap;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -78,13 +79,17 @@ main {
 
 .hero-description {
   font-size: 2rem;
-  line-height: 1.6;
+  line-height: 1.3;
+  font-weight: 400;
 }
 
 .hero-img {
   max-width: 40vw;
+  margin-top: 50px;
 }
 
 .sign-up-button {
   font-size: 1.5rem;
+  margin-left: 5%;
+  // color:
 }
