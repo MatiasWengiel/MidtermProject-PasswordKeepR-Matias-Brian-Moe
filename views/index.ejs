@@ -26,8 +26,12 @@
       <h2 id="logo"><span>Password</span>KeepR</h2>
       <nav class="main-nav">
         <div class="main-nav-links">
-          <a class="link" href="#">Login</a>
-          <a class="link signup" href="#">Sign Up</a>
+          <form action="/login" method="get">
+            <button class="link main-nav-links">Login</button>
+          </form>
+          <form action="/register" method="get">
+            <button class="link main-nav-links signup">Sign Up</button>
+          </form>
         </div>
       </nav>
     </header>
@@ -37,18 +41,18 @@
         <div class="hero-text">
           <h1 class="heading-primary">One Password for Everything</h1>
           <p class="hero-description">
-            PasswordKeeper generates strong passwords and stores them all in
-            one convinent location. You now only need to remember one master
+            PasswordKeeper generates strong passwords and stores them all in one
+            convinent location. You now only need to remember one master
             password.
           </p>
           <button class="sign-up-button">Sign Up Now!</button>
-          </div>
-          <div class="hero-img-box">
-            <img
-              src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80"
-              class="hero-img"
-            />
-          </div>
+        </div>
+        <div class="hero-img-box">
+          <img
+            src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1930&q=80"
+            class="hero-img"
+          />
+        </div>
       </section>
     </main>
   </body>
