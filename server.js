@@ -7,16 +7,18 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const cookieSession = require('cookie-session');
+const cookieSession = require("cookie-session");
 // const bodyParser = require('body-parser');
 
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieSession({
-  name: 'session',
-  keys:['secretKey']
-}));
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["secretKey"],
+  })
+);
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -30,7 +32,6 @@ db.connect();
 app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
-
 
 app.use(
   "/styles",
@@ -46,29 +47,43 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const passwordRoutes = require('./routes/passwords');
-const passwordApiRoutes = require('./routes/passwordsApi');
+const passwordRoutes = require("./routes/passwords");
+const passwordApiRoutes = require("./routes/passwordsApi");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(db));
-app.use('/passwords', passwordRoutes(db)); // this one return HTML
+app.use("/passwords", passwordRoutes(db)); // this one return HTML
 // app.use('/api/passwords', passwordApiRoutes(db)); // this one return json
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
-app.get('/', (req, res) => {
-  res.render('index')
-})
+app.get("/", (req, res) => {
+  res.render("index");
+});
 
-app.get('/login', (req, res) => { //Added to easily render page. Will fix/move before submission
-  res.render('login')
-})
+app.get("/login", (req, res) => {
+  //Added to easily render page. Will fix/move before submission
+  res.render("login");
+});
 
-app.get('/register', (req, res) => {//Added to easily render page. Will fix/move before submission
-  res.render('register')
-})
+app.post("/login", (req, res) => {
+  const userId = req.body.username;
+  const orgId = req.body.password;
+  if (!userId || !orgId) {
+    return res.status(403).send("Email and Password cannot be blank.");
+  } else {
+    req.session.userId = userId;
+    req.session.orgId = orgId;
+    res.redirect("/passwords");
+  }
+});
+
+app.get("/register", (req, res) => {
+  //Added to easily render page. Will fix/move before submission
+  res.render("register");
+});
 // Separate them into separate routes files (see above).
 
 app.listen(PORT, () => {
