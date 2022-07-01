@@ -96,13 +96,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
 
 // Edit Password
 
 .app-container {
-
   background-color: #fff4e6;
 
   width: 100%;
@@ -147,7 +145,7 @@
   margin-bottom: 30px;
   h1 {
     margin: 0px;
-    color: $background-dark;
+    color: #000;
   }
 }
 
