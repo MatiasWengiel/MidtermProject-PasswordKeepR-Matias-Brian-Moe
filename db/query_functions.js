@@ -42,5 +42,4 @@ module.exports = {
   getOrganization,
   addNewPassword,
   getAllOrganizationalPasswords
-
 };
