@@ -15,6 +15,9 @@
   }
   h3 {
     color: $font-color-dark;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
   }
 }
 
@@ -89,15 +92,12 @@
 display: none;
 }
 
-.form-group{
+.form-group, .field{
   margin: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: solid 0.5px gray;
-  border-radius: 10px;
-  padding: 5px;
-
+  align-items: center;
 }
 
 .app-container {
@@ -128,3 +128,62 @@ display: none;
   width: 250px;
   height: 250px;
 }
+
+.new-password-fields {
+  display: flex;
+
+}
+
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 50%;
+}
+
+.checkbox-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: small;
+}
+
+.generate-fields {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: small;
+}
+
+.form-btns {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: small;
+}
+
+#character-number {
+  font-size: 12px;
+  color: #cd7913;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #e3b438;
+  outline: none;
+  background: transparent;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+.input-field {
+  width: 100%;
+  font-size: 16px;
+  color: rgb(205, 121, 19);
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #e3b438;
+  outline: none;
+  background: transparent;
+}
+

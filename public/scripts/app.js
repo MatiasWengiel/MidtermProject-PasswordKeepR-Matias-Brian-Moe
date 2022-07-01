@@ -10,7 +10,7 @@ $(document).ready(function() {
   });
 
   $("#show-form").on('click', () => {
-    $(".new-password").slideDown("hidden");
+    $(".new-password").slideToggle("slow");
   });
 
   $(".new-password-form").on("submit", function() {
