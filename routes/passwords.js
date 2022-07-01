@@ -15,11 +15,11 @@ const alphabetizePasswords = (passwords) => { //Only helper function server-side
     let lowerCaseN2 = secondPW.website_nickname.toLowerCase();
 
     if (lowerCaseN1 > lowerCaseN2) {
-      return 1
+      return 1;
     } else if (lowerCaseN1 < lowerCaseN2) {
-      return -1
+      return -1;
     } else {
-      return 0
+      return 0;
     }
   });
 };
@@ -28,7 +28,7 @@ const alphabetizePasswords = (passwords) => { //Only helper function server-side
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-    const { userId, orgId } = req.session;
+    const { orgId } = req.session;
 
     db.query(getEmail(orgId))
       .then((data) => {
@@ -56,7 +56,7 @@ module.exports = (db) => {
 
 
   router.post("/", (req, res) => {
-    const { userId, orgId } = req.session;
+    const { orgId } = req.session;
     const { loginEmail, newPassword, account, url, category } = req.body;
     db.query(addNewPassword(), [
       loginEmail,
