@@ -25,7 +25,7 @@ const getOrganization = (userId) => {
 
 const addNewPassword = () => {
   return `INSERT INTO passwords (login_email, login_password, website_nickname, website_url, category_id, organization_id)
-  VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`
+  VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`;
 
 };
 
