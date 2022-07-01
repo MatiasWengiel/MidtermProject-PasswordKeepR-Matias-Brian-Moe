@@ -6,9 +6,7 @@ const {
   editLogin,
   getOrganization,
   addNewPassword,
-  getAllOrganizationalPasswords,
-  // getAllOrganizationalPasswordsWithinCategory,
-  getAllOrganizationalPasswordsFromSearch,
+  getAllOrganizationalPasswords
 } = require("../db/query_functions");
 
 const alphabetizePasswords = (passwords) => { //Only helper function server-side, if more are needed will move to dedicated
@@ -28,9 +26,6 @@ const alphabetizePasswords = (passwords) => { //Only helper function server-side
 
 
 module.exports = (db) => {
-  router.get("/new", (req, res) => {
-    res.send("<h1>This is the /users page</h1>");
-  });
 
   router.get("/", (req, res) => {
     const { userId, orgId } = req.session;
@@ -50,7 +45,7 @@ module.exports = (db) => {
               email,
               organization,
             };
-            res.render("passwords_page", templateVars); //We can change this to render the page showing the PWs
+            res.render("passwords_page", templateVars);
           });
         });
       })
@@ -72,7 +67,7 @@ module.exports = (db) => {
       orgId,
     ]);
 
-    // res.redirect("passwords");
+    res.redirect("passwords");
   });
 
   router.post("/:id", (req, res) => {

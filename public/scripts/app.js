@@ -38,6 +38,18 @@ $(document).ready(function () {
     $('.password-content').slideDown("slow");
   })
 
+  //Searches for passwords containing specific query in nickname
+
+  $('.search-btn').click(function (e) {
+    e.preventDefault();
+    let queryLowerCase = $(this).siblings().val().toLowerCase();
+    const queryUpperCase = $(this).siblings().val().toUpperCase();
+    $('.password-content').hide();
+    $(`button:contains('${queryLowerCase}')`).slideDown("slow")
+    $(`button:contains('${queryUpperCase}')`).slideDown("slow")
+
+  })
+
   // Updates password information through edit button
   $(".edit-form").on("submit", function (e) {
     e.preventDefault();
