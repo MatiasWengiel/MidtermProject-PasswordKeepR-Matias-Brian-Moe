@@ -11,11 +11,11 @@ PasswordKeepR allows for the easy and secure sharing of passwords across an orga
 
 Website's Front Page:
 
-![Front page](./project_organization/PWKeepR%20front%20page.png)
+![Front page](https://github.com/MatiasWengiel/MidtermProject-PasswordKeepR-Matias-Brian-Moe/blob/master/project_organization/PWKeepR-front-page.png)
 
 Website's Password's Page:
 
-![Passwords page](./project_organization/PWKeepR%20main%20page.png)
+![Passwords page](https://github.com/MatiasWengiel/MidtermProject-PasswordKeepR-Matias-Brian-Moe/blob/master/project_organization/PWKeepR-main-page.png)
 
 ## Table of Contents
 - [Description](#description)
