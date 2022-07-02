@@ -28,29 +28,29 @@
 <!-- * Create simple registration page for new users - Brian -->
 <!-- * Add login and registration buttons to the home page - Brian ?  -->
 
-* Link the routes and pages together 
+<!-- * Link the routes and pages together  -->
   <!-- * Categories - Matias -->
 <!-- * Work on logic for displaying passwords -->
   <!-- * Categories - Matias -->
-* Create new passwords logic - <!--Moe-->
+<!-- * Create new passwords logic - Moe -->
   <!-- * Connect route to database
   * Render new passwords -->
-  * Make pretty and toggleable
+  <!-- * Make pretty and toggleable -->
 <!-- * Implement SASS - Matias (Weekend) -->
 <!-- * Name and Org query for database - Brian  -->
-* Password editting - Brian
+<!-- * Password editting - Brian -->
   <!-- * Fix selection bug (only the first PW is working) -->
-  * Make pretty and slide down
+  <!-- * Make pretty and slide down -->
 <!-- * Fix helpers.js copy bug - Matias -->
 <!-- * Remove extra things from front page - Matias -->
 <!-- * Login page - Matias
 * Start looking at CSS for SASS variables - Matias -->
-* Connect front page to passwords page Maybe spoof login page - Brian
+<!-- * Connect front page to passwords page Maybe spoof login page - Brian -->
 
 <!-- Stretch -->
-* Search button - Matias
+<!-- * Search button - Matias
 * Alphabetize the passwords - Matias
-* Figure out bouncy animation bug
+* Figure out bouncy animation bug - Matias -->
 * Registration and login
 * Registration and login errors using jQuery
 
